@@ -1,3 +1,5 @@
 {
-  "repoConfigMode": "createOnboardingPR"
+  "repoConfigMode": "pushwhitesourceFile",
+  "enableCustomProductMapping": true,
+  "repoConfigFileName": ".mend"
 }
