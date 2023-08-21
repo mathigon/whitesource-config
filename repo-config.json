@@ -23,43 +23,40 @@
   },
   "remediateSettings": {
     "enableRenovate": true,
-    "extends": ["github>whitesource/merge-confidence:beta"],
+    "extends": ["config:base"],
     "workflowRules": {
       "enabled": true,
       "minVulnerabilitySeverity": "LOW"
     },
-    "schedule": ["every 3 months on the first day of the month"],
+    "schedule": ["on the first day of the month"],
     "rollbackPrs": false,
     "branchPrefix": "mend/",
     "labels": ["dependencies"],
     "packageRules": [{
-      "packagePatterns": ["@mathigon", "@amplify"],
-      "groupName": "Internal",
-      "schedule": ["at any time"],
-      "automerge": true
+      "matchPackagePatterns": ["esbuild", "autoprefixer", "cssnano", "postcss", "sass", "pug", "rtlcss", "jsdom", "marked", "chokidar", "yargs-parser", "html-entities", "html-minifier", "glob", "jimp"],
+      "groupName": "Build Tools"
     }, {
-      "packagePatterns": ["ts-node", "^typescript", "tslib"],
-      "groupName": "Typescript",
-      "automerge": true
+      "matchPackagePatterns": ["express", "body-parser", "multer", "bcryptjs", "cookie-parser", "lusca", "compression", "date-fns", "validator", "xml", "xss", "cors", "serve-favicon", "papaparse", "color-convert"],
+      "groupName": "Server"
+    }, {
+      "matchPackagePatterns": ["@google-cloud", "@sendgrid", "google-auth-library", "apple-signin-auth", "akismet-api"],
+      "groupName": "APIs and Third Party Tools"
+    }, {
+      "matchPackagePatterns": ["mongodb-memory-server", "mongoose", "mongo"],
+      "groupName": "Database"
     }, {
       "matchDepTypes": ["devDependencies"],
       "groupName": "Dev Dependencies",
       "automerge": true
     }, {
-      "packagePatterns": ["esbuild", "autoprefixer", "cssnano", "postcss", "sass", "pug", "rtlcss", "jsdom", "marked", "chokidar", "yargs-parser", "html-entities", "html-minifier", "glob", "jimp"],
-      "groupName": "Build Tools",
+      "matchPackagePatterns": ["ts-node", "^typescript", "tslib"],
+      "groupName": "Typescript",
       "automerge": true
     }, {
-      "packagePatterns": ["mongodb-memory-server", "mongoose", "mongo"],
-      "groupName": "Database",
+      "matchPackagePatterns": ["@mathigon", "@amplify"],
+      "groupName": "Internal",
+      "schedule": ["at any time"],
       "automerge": true
-    }, {
-      "packagePatterns": ["express", "body-parser", "multer", "bcryptjs", "cookie-parser", "lusca", "compression", "date-fns", "validator", "xml", "xss", "cors", "serve-favicon", "papaparse", "color-convert"],
-      "groupName": "Server",
-      "automerge": true
-    }, {
-      "packagePatterns": ["@google-cloud", "@sendgrid", "google-auth-library", "apple-signin-auth", "akismet-api"],
-      "groupName": "APIs and Third Party Tools"
     }],
     "ignoreDeps": ["@percy/puppeteer", "mathjax", "fluent-ffmpeg", "license-checker", "node-fetch", "@types/three", "@types/d3", "@types/topojson"]
   }
