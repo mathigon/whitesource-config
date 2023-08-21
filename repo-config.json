@@ -30,6 +30,8 @@
     },
     "schedule": ["every 3 months on the first day of the month"],
     "rollbackPrs": false,
+    "branchPrefix": "mend/",
+    "labels": ["dependencies"],
     "packageRules": [{
       "packagePatterns": ["@mathigon", "@amplify"],
       "groupName": "Internal",
