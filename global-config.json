@@ -1,5 +1,4 @@
 {
-  "repoConfigMode": "pushwhitesourceFile",
-  "enableCustomProductMapping": true,
-  "repoConfigFileName": ".mend"
+  "repoConfigMode": "nowhitesourceFile",
+  "enableCustomProductMapping": true
 }
