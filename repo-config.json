@@ -14,7 +14,7 @@
     "displayMode": "diff",
     "useMendCheckNames": true,
     "showWsInfo": true,
-    "strictMode": false
+    "strictMode": "warning"
   },
   "issueSettings": {
     "minSeverityLevel": "LOW",
