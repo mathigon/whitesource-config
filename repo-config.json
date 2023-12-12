@@ -3,7 +3,9 @@
     "configMode": "AUTO",
     "configExternalURL": "",
     "enableLicenseViolations": true,
-    "baseBranches": []
+    "baseBranches": [],
+    "enableReachability": true,
+    "reachabilityScanDelayHours": 24
   },
   "scanSettingsSAST": {
     "enableScan": false
